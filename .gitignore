@@ -1,0 +1,16 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Task & Walkthrough (Keep if you want them on GitHub, but usually these are internal)
+# I will keep them for now as they seem to be the documentation.
+
+# Environment
+.env
+.agent/
+.gemini/
+
+# Internal Documentation
+task.md
+walkthrough.md
+implementation_plan.md
