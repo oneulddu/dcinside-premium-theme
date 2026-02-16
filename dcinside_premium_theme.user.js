@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DCinside Premium Theme (Mobile)
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  디시인사이드 모바일을 세련되고 모던한 프리미엄 테마로 변경합니다.
 // @author       Antigravity
 // @match        https://m.dcinside.com/*
