@@ -14,7 +14,6 @@
 
     const CONFIG = {
         anonymizeNicknames: true,
-        removeDynamicAds: true,
         useExternalFonts: false,
         initialPrehide: true,
         initialPrehideMaxMs: 1000
@@ -605,7 +604,7 @@
 
         /* 상단 네비게이션(GNB) 및 불필요 요소 제거 */
         .menu-scroll-box, #topmenu, .gnb, .gnb-area, .gnb_box, .nav.fx-depthmenu, .menu-scroll-slider,
-        .issue-feed, .ft-info, footer, .ad-box, .btn-top, .bottom-ads, .top-ads, 
+        .ft-info, footer, .btn-top, 
         .list-all-wrap, .thum-list-all, .all-list-btn, .sp-lst, .sp-lst-txt,
         .reco-icon-box, .reco-icon-lst, .reco-circle, .reco-cicle-lst, .btn-justify-area, #view_btn_area {
             display: none !important;
@@ -731,13 +730,6 @@
         const cleanup = () => {
             // 헤더 및 검색창 안정화 실행
             stabilizeSearchHeader();
-
-            if (CONFIG.removeDynamicAds) {
-                const removableSelectors = ['.issue-feed', '.ad-box', '.bottom-ads', '.top-ads'];
-                removableSelectors.forEach(sel => {
-                    document.querySelectorAll(sel).forEach(el => el.remove());
-                });
-            }
 
             if (CONFIG.anonymizeNicknames) {
                 // 익명성 강화: 닉네임 전용 요소만 치환

@@ -9,7 +9,7 @@
 
 <p align="center">
   <b>디시인사이드 모바일을 세련되고 모던한 프리미엄 UI로 바꿔주는 유저스크립트</b><br/>
-  광고 없는 깔끔한 화면 · 익명화 모드 · 높은 정보 밀도
+  쾌적하고 깔끔한 화면 · 익명화 모드 · 높은 정보 밀도
 </p>
 
 ---
@@ -17,7 +17,7 @@
 ## ✨ 주요 기능
 
 ### 🎯 클린 뷰
-광고, 이슈 피드, 추천 아이콘, GNB 메뉴 등 **불필요한 요소를 모두 제거**하여 콘텐츠에만 집중할 수 있습니다.
+이슈 피드, 추천 아이콘, GNB 메뉴 등 **불필요한 요소를 모두 제거**하여 콘텐츠에만 집중할 수 있습니다.
 
 ### 🔒 익명화 모드
 게시글 리스트와 댓글에서 `ㅇㅇ` 또는 `~갤러` 형태의 닉네임을 자동 감지하여 **'익명'으로 치환**합니다. 댓글 작성자 앞에는 `익명의 사용자` 접두어가 자동 추가됩니다.
@@ -59,7 +59,6 @@
 ```javascript
 const CONFIG = {
     anonymizeNicknames: true,   // 닉네임 익명화 on/off
-    removeDynamicAds: true,     // 동적 광고 제거 on/off
     useExternalFonts: false,    // 외부 폰트(Pretendard CDN) 로드 on/off
     initialPrehide: true,       // 초기 로드 시 깜빡임 방지 on/off
     initialPrehideMaxMs: 1000   // 깜빡임 방지 최대 대기 시간 (ms)
@@ -88,7 +87,7 @@ const CONFIG = {
 |---|---|
 | **`@run-at document-start`** | 페이지 렌더 전에 CSS를 주입하여 깜빡임(FOUC)을 방지합니다. |
 | **Prehide 메커니즘** | `visibility: hidden`으로 초기 화면을 숨긴 후, 테마 적용 완료 시 해제합니다. Fail-safe 타이머로 영구 숨김을 방지합니다. |
-| **MutationObserver** | DOM 변경을 감시하여 동적으로 삽입되는 광고나 요소를 자동 제거합니다. |
+| **MutationObserver** | DOM 변경을 감시하여 동적으로 삽입되는 요소를 자동 처리합니다. |
 | **Debounced Cleanup** | Observer 콜백을 120ms 디바운스하여 성능 저하를 방지합니다. |
 | **Sticky Header** | 스크롤 시에도 헤더가 상단에 고정되어 검색과 탐색이 용이합니다. |
 
