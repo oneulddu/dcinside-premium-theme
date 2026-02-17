@@ -16,7 +16,10 @@
         anonymizeNicknames: true,
         useExternalFonts: false,
         initialPrehide: true,
-        initialPrehideMaxMs: 1000
+        initialPrehideMaxMs: 1000,
+        relaxAggressiveSpamHiding: true,
+        spamHideRecoveryThreshold: 0.5,
+        spamHideRecoveryMinComments: 30
     };
     const THEME_PENDING_CLASS = 'dcinside-theme-pending';
     const THEME_BOOT_CLASS = 'dcinside-theme-boot';
@@ -581,6 +584,16 @@
             line-height: 1.5 !important;
         }
 
+        /* 외부 댓글 필터 스크립트 호환: 토글 버튼이 레이아웃에 묻히지 않도록 보정 */
+        #spam-toggle-btn {
+            display: block !important;
+            margin: 10px 15px !important;
+            border: 1px solid #d9d9d9 !important;
+            border-radius: 8px !important;
+            background: #f7f7f7 !important;
+            color: #333 !important;
+        }
+
         /* 추천 박스 미니멀화 */
         .btn-recommend-box {
             background: var(--premium-white) !important;
@@ -633,7 +646,7 @@
 
     // 프리미엄 스타일로 텍스트나 레이아웃 추가 조정
     let hasStartedTheme = false;
-    const startTheme = () => {
+        const startTheme = () => {
         if (hasStartedTheme) return;
         if (!document.body) return;
         hasStartedTheme = true;
@@ -752,6 +765,22 @@
 
                     el.dataset.anonProcessed = '1';
                 });
+            }
+
+            if (CONFIG.relaxAggressiveSpamHiding) {
+                const commentItems = Array.from(document.querySelectorAll('li.comment, li.comment-add'));
+                if (commentItems.length >= CONFIG.spamHideRecoveryMinComments) {
+                    const hiddenItems = commentItems.filter(item => item.classList.contains('spam-hidden'));
+                    if (hiddenItems.length > 0) {
+                        const hiddenRatio = hiddenItems.length / commentItems.length;
+                        if (hiddenRatio >= CONFIG.spamHideRecoveryThreshold) {
+                            hiddenItems.forEach(item => {
+                                item.classList.remove('spam-hidden');
+                                item.classList.remove('spam-highlight');
+                            });
+                        }
+                    }
+                }
             }
         };
 
