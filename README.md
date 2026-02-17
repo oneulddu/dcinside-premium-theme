@@ -1,6 +1,6 @@
 <p align="center">
   <img src="https://img.shields.io/badge/platform-mobile-brightgreen?style=flat-square" alt="Platform: Mobile" />
-  <img src="https://img.shields.io/badge/version-1.2-blue?style=flat-square" alt="Version" />
+  <img src="https://img.shields.io/badge/version-1.3-blue?style=flat-square" alt="Version" />
   <img src="https://img.shields.io/badge/license-MIT-yellow?style=flat-square" alt="License" />
   <img src="https://img.shields.io/badge/tampermonkey-compatible-red?style=flat-square" alt="Tampermonkey" />
 </p>
