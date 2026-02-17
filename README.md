@@ -1,6 +1,6 @@
 <p align="center">
   <img src="https://img.shields.io/badge/platform-mobile-brightgreen?style=flat-square" alt="Platform: Mobile" />
-  <img src="https://img.shields.io/badge/version-1.1-blue?style=flat-square" alt="Version" />
+  <img src="https://img.shields.io/badge/version-1.2-blue?style=flat-square" alt="Version" />
   <img src="https://img.shields.io/badge/license-MIT-yellow?style=flat-square" alt="License" />
   <img src="https://img.shields.io/badge/tampermonkey-compatible-red?style=flat-square" alt="Tampermonkey" />
 </p>
@@ -78,6 +78,15 @@ const CONFIG = {
 1. 유저스크립트 관리자에서 **새 스크립트 추가**를 선택합니다.
 2. `dcinside_premium_theme.user.js`의 전체 내용을 붙여넣습니다.
 3. 저장 후 `m.dcinside.com`에 접속하면 **자동으로 테마가 적용**됩니다.
+
+### GitHub Raw로 설치/업데이트
+1. 아래 `user.js` Raw 주소를 브라우저에서 열어 설치합니다.
+2. 스크립트 헤더의 `@updateURL`, `@downloadURL`을 통해 새 버전이 배포되면 자동 업데이트됩니다.
+
+- 설치 URL (`user.js`):
+  `https://raw.githubusercontent.com/oneulddu/dcinside-premium-theme/master/dcinside_premium_theme.user.js`
+- 업데이트 메타 URL (`meta.js`):
+  `https://raw.githubusercontent.com/oneulddu/dcinside-premium-theme/master/dcinside_premium_theme.meta.js`
 
 ---
 
